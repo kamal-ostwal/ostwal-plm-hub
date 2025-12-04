@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Mail, MapPin, Phone, ArrowRight } from "lucide-react";
+import { Mail, MapPin, ArrowRight } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -27,22 +27,13 @@ const Contact = () => {
                 </h3>
                 <div className="space-y-6">
                   <a 
-                    href="mailto:contact@ostwalllc.com" 
+                    href="mailto:kamal@ostwal.net" 
                     className="flex items-center gap-4 text-muted-foreground hover:text-accent transition-colors group"
                   >
                     <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
                       <Mail className="h-5 w-5" />
                     </div>
-                    <span>contact@ostwalllc.com</span>
-                  </a>
-                  <a 
-                    href="tel:+1234567890" 
-                    className="flex items-center gap-4 text-muted-foreground hover:text-accent transition-colors group"
-                  >
-                    <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
-                      <Phone className="h-5 w-5" />
-                    </div>
-                    <span>+1 (234) 567-890</span>
+                    <span>kamal@ostwal.net</span>
                   </a>
                   <div className="flex items-center gap-4 text-muted-foreground">
                     <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center">
@@ -59,7 +50,7 @@ const Contact = () => {
                   Ostwal LLC can help you achieve your goals.
                 </p>
                 <Button variant="hero" size="lg" asChild className="w-fit">
-                  <a href="mailto:contact@ostwalllc.com">
+                  <a href="mailto:kamal@ostwal.net">
                     Schedule Consultation
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
