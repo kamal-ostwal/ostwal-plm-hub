@@ -1,63 +1,37 @@
-import { CheckCircle2 } from "lucide-react";
+import { Award, Clock, Users, Handshake } from "lucide-react";
 
-const benefits = [
-  "Deep expertise in leading PLM platforms including Teamcenter, Windchill, and Enovia",
-  "Proven track record with Fortune 500 manufacturing companies",
-  "Agile methodology ensuring on-time, on-budget delivery",
-  "Dedicated support team available when you need them",
-  "Industry-specific best practices and templates",
-  "ROI-focused approach with measurable outcomes"
+const reasons = [
+  { icon: Award, title: "15+ Years of Expertise", desc: "Deep domain knowledge across PLM, ERP, and enterprise systems." },
+  { icon: Clock, title: "Proven Track Record", desc: "50+ successful projects delivered on time and on budget." },
+  { icon: Users, title: "Industry-Trained Consultants", desc: "Specialists in manufacturing, aerospace, and automotive PLM." },
+  { icon: Handshake, title: "Strong Consulting Partnership", desc: "We work as an extension of your team, not just a vendor." },
 ];
 
-const WhyUs = () => {
-  return (
-    <section id="about" className="py-20 md:py-28 bg-muted/50">
-      <div className="container px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <span className="inline-block px-3 py-1 mb-4 text-sm font-medium rounded-full bg-primary/10 text-primary">
-              Why Choose Us
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Your Trusted PLM Partner
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              At Ostwal LLC, we combine deep technical expertise with industry knowledge 
-              to deliver PLM solutions that truly transform how you manage product data 
-              and processes. Our consultants bring years of hands-on experience across 
-              diverse manufacturing sectors.
-            </p>
-            
-            <ul className="space-y-4">
-              {benefits.map((benefit, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-foreground">{benefit}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div className="relative">
-            <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 via-accent/10 to-primary/5 flex items-center justify-center">
-              <div className="text-center p-8">
-                <div className="font-display text-7xl md:text-8xl font-bold text-primary mb-2">15+</div>
-                <p className="text-xl text-muted-foreground">Years of Experience</p>
-              </div>
-            </div>
-            <div className="absolute -bottom-6 -left-6 bg-card rounded-xl p-6 shadow-lg border border-border">
-              <div className="font-display text-3xl font-bold text-accent mb-1">50+</div>
-              <p className="text-sm text-muted-foreground">Projects Delivered</p>
-            </div>
-            <div className="absolute -top-6 -right-6 bg-card rounded-xl p-6 shadow-lg border border-border">
-              <div className="font-display text-3xl font-bold text-accent mb-1">100%</div>
-              <p className="text-sm text-muted-foreground">Client Satisfaction</p>
-            </div>
-          </div>
-        </div>
+const WhyUs = () => (
+  <section id="about" className="py-16 md:py-24 bg-muted/50">
+    <div className="container px-6">
+      <div className="text-center max-w-2xl mx-auto mb-12">
+        <span className="inline-block px-3 py-1 mb-3 text-xs font-semibold tracking-wider uppercase rounded-full bg-accent/10 text-accent">
+          Why Choose Us
+        </span>
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">
+          Why Businesses Trust Ostwal LLC
+        </h2>
       </div>
-    </section>
-  );
-};
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        {reasons.map((r) => (
+          <div key={r.title} className="text-center p-6">
+            <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-4">
+              <r.icon className="h-7 w-7" />
+            </div>
+            <h3 className="font-display font-semibold text-foreground mb-2 text-sm">{r.title}</h3>
+            <p className="text-sm text-muted-foreground">{r.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 export default WhyUs;

@@ -1,77 +1,109 @@
-import { Settings, Database, TrendingUp, Shield, Users, Cog } from "lucide-react";
+import {
+  Settings, Database, TrendingUp, Shield, Users, Cog,
+  CheckCircle2, BarChart3, Layers, FileSearch, RefreshCw, Workflow,
+} from "lucide-react";
 
-const services = [
+const categories = [
   {
-    icon: Settings,
-    title: "PLM Implementation",
-    description: "End-to-end implementation of leading PLM platforms tailored to your business processes and workflows."
+    title: "PLM Implementation & Management",
+    subtitle: "Build your product data backbone with leading platforms.",
+    items: [
+      { icon: Settings, label: "Teamcenter / Windchill / Enovia" },
+      { icon: Database, label: "Data Migration & Validation" },
+      { icon: Layers, label: "BOM Management & Configuration" },
+      { icon: FileSearch, label: "Document & Change Management" },
+    ],
+    outcomes: [
+      "Centralized product data across the lifecycle",
+      "Reduced engineering change cycle time",
+      "Improved cross-functional collaboration",
+    ],
   },
   {
-    icon: Database,
-    title: "Data Migration",
-    description: "Seamless migration of your product data with complete integrity, validation, and minimal downtime."
+    title: "Analytics & BI Reporting",
+    subtitle: "Turn your product data into actionable insights.",
+    items: [
+      { icon: BarChart3, label: "Custom Dashboard & Reporting" },
+      { icon: TrendingUp, label: "KPI Tracking & Process Analytics" },
+      { icon: Workflow, label: "Workflow Automation" },
+      { icon: RefreshCw, label: "Real-Time Data Integration" },
+    ],
+    outcomes: [
+      "Faster, more informed decisions",
+      "Automated reporting & reduced manual effort",
+      "End-to-end visibility into product performance",
+    ],
   },
   {
-    icon: TrendingUp,
-    title: "Process Optimization",
-    description: "Analyze and optimize your product development processes to reduce time-to-market and costs."
+    title: "System Integration & Consulting",
+    subtitle: "Connect your enterprise systems for unified data flow.",
+    items: [
+      { icon: Shield, label: "ERP & CAD Integration" },
+      { icon: Cog, label: "Custom Extension Development" },
+      { icon: Users, label: "Training & Change Management" },
+      { icon: Settings, label: "Architecture & Strategy Consulting" },
+    ],
+    outcomes: [
+      "Seamless data flow across enterprise apps",
+      "Maximized ROI on existing systems",
+      "Empowered teams through tailored training",
+    ],
   },
-  {
-    icon: Shield,
-    title: "System Integration",
-    description: "Connect your PLM system with ERP, CAD, and other enterprise applications for unified data flow."
-  },
-  {
-    icon: Users,
-    title: "Training & Support",
-    description: "Comprehensive training programs and ongoing support to maximize your team's productivity."
-  },
-  {
-    icon: Cog,
-    title: "Custom Development",
-    description: "Build custom extensions and integrations to meet your unique business requirements."
-  }
 ];
 
-const Services = () => {
-  return (
-    <section id="services" className="py-20 md:py-28 bg-background">
-      <div className="container px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block px-3 py-1 mb-4 text-sm font-medium rounded-full bg-accent/10 text-accent">
-            What We Do
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Comprehensive PLM Services
-          </h2>
-          <p className="text-muted-foreground text-lg">
-            From strategy to implementation, we provide full-spectrum PLM consulting services 
-            that drive measurable business outcomes.
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <div 
-              key={service.title}
-              className="group p-8 rounded-2xl bg-card card-elevated border border-border/50 hover:border-accent/30"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-accent/10 text-accent mb-6 group-hover:bg-accent group-hover:text-accent-foreground transition-colors duration-300">
-                <service.icon className="h-7 w-7" />
-              </div>
-              <h3 className="font-display text-xl font-semibold text-card-foreground mb-3">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {service.description}
-              </p>
-            </div>
-          ))}
-        </div>
+const Services = () => (
+  <section id="services" className="py-16 md:py-24 bg-background">
+    <div className="container px-6">
+      <div className="text-center max-w-2xl mx-auto mb-14">
+        <span className="inline-block px-3 py-1 mb-3 text-xs font-semibold tracking-wider uppercase rounded-full bg-accent/10 text-accent">
+          Solutions We Deliver
+        </span>
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
+          Comprehensive PLM &amp; IT Consulting Services
+        </h2>
+        <p className="text-muted-foreground">
+          From strategy to execution, we provide full-spectrum services that drive measurable business outcomes.
+        </p>
       </div>
-    </section>
-  );
-};
+
+      <div className="space-y-10 max-w-4xl mx-auto">
+        {categories.map((cat) => (
+          <div key={cat.title} className="bg-card rounded-2xl border border-border/50 p-6 md:p-8 card-elevated">
+            <h3 className="font-display text-lg md:text-xl font-bold text-card-foreground mb-1">
+              {cat.title}
+            </h3>
+            <p className="text-sm text-muted-foreground mb-5">{cat.subtitle}</p>
+
+            <div className="grid sm:grid-cols-2 gap-3 mb-5">
+              {cat.items.map((item) => (
+                <div
+                  key={item.label}
+                  className="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/5 border border-primary/10"
+                >
+                  <item.icon className="h-5 w-5 text-primary flex-shrink-0" />
+                  <span className="text-sm font-medium text-foreground">{item.label}</span>
+                </div>
+              ))}
+            </div>
+
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+                Business Outcomes
+              </p>
+              <ul className="space-y-1.5">
+                {cat.outcomes.map((o) => (
+                  <li key={o} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <CheckCircle2 className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
+                    {o}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 export default Services;
