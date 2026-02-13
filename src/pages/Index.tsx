@@ -3,8 +3,8 @@ import Hero from "@/components/Hero";
 import ValueProps from "@/components/ValueProps";
 import WhyUs from "@/components/WhyUs";
 import Services from "@/components/Services";
-import Platform from "@/components/Platform";
 import Industries from "@/components/Industries";
+import Platform from "@/components/Platform";
 import CaseStudies from "@/components/CaseStudies";
 import CtaBanner from "@/components/CtaBanner";
 import Contact from "@/components/Contact";
@@ -17,8 +17,8 @@ const Index = () => (
     <ValueProps />
     <WhyUs />
     <Services />
-    <Platform />
     <Industries />
+    <Platform />
     <CaseStudies />
     <CtaBanner />
     <Contact />
